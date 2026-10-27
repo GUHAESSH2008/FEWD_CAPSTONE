@@ -1,0 +1,207 @@
+
+
+<html>
+<head>
+    <title>ExpiryGuard | Track. Use. Waste Less.</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="brand">
+      <span class="logo">🌿</span>
+      <div>
+        <h2>ExpiryGuard</h2>
+        <small>Track · Use · Waste Less</small>
+      </div>
+    </div>
+
+    <nav>
+      <a href="#dashboard">⌂ Dashboard</a>
+      <a href="#add">＋ Add Product</a>
+      <a href="#items">▧ All Items</a>
+      <a href="#summary">▥ Statistics</a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <div class="food">🥬 🥕 🍅 🥛</div>
+      <h3>Good Food,<br>Better Tomorrow.</h3>
+      <p>Track Today. Reduce Waste.</p>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main id="dashboard">
+
+    <header class="topbar">
+      <span>Workspace / Dashboard</span>
+      <div class="profile">
+        <span class="avatar">G</span>
+        Guhaessh V
+      </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+      <div>
+        <span class="tagline">
+          KEEP TRACK · STAY FRESH · WASTE LESS
+        </span>
+        <h1>Every item counts.<br>
+          <em>Every day matters.</em>
+        </h1>
+        <p>Your little helper for a fresher, smarter home.</p>
+        <a href="#add" class="hero-button">＋ Add Product</a>
+      </div>
+      <div class="hero-food">🥑 🍅 🥬 🥕</div>
+    </section>
+
+    <!-- Statistics -->
+    <section class="stats" id="summary">
+
+      <div class="stat expired">
+        <span class="stat-icon">!</span>
+        <div>
+          <h3>Expired</h3>
+          <strong id="cExpired">0</strong>
+          <p>Past expiry date</p>
+        </div>
+      </div>
+
+      <div class="stat soon">
+        <span class="stat-icon">◷</span>
+        <div>
+          <h3>Expiring Soon</h3>
+          <strong id="cSoon">0</strong>
+          <p>Within 7 days</p>
+        </div>
+      </div>
+
+      <div class="stat first">
+        <span class="stat-icon">⌛</span>
+        <div>
+          <h3>Use First</h3>
+          <strong id="cFirst">0</strong>
+          <p>8–30 days left</p>
+        </div>
+      </div>
+
+      <div class="stat fine">
+        <span class="stat-icon">✓</span>
+        <div>
+          <h3>Fine for Now</h3>
+          <strong id="cOk">0</strong>
+          <p>More than 30 days</p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Add Product -->
+    <section class="panel" id="add">
+      <h2>✦ Add New Product</h2>
+      <p>Keep your inventory up to date.</p>
+
+      <form id="form">
+        <label>
+          Product Name
+          <input id="name" type="text"
+                 placeholder="e.g. Fresh Milk" required>
+        </label>
+
+        <label>
+          Category
+          <select id="cat">
+            <option>Groceries</option>
+            <option>Dairy</option>
+            <option>Beverages</option>
+            <option>Personal care</option>
+            <option>Household</option>
+            <option>Bakery</option>
+            <option>Vegetables</option>
+            <option>Grains</option>
+          </select>
+        </label>
+
+        <label>
+          Quantity
+          <input id="qty" type="number" min="1" value="1" required>
+        </label>
+
+        <label>
+          Expiry Date
+          <input id="date" type="date" required>
+        </label>
+
+        <button class="add-btn" type="submit">
+          ＋ Add Product
+        </button>
+      </form>
+
+      <p id="err"></p>
+    </section>
+
+    <!-- Search and Filters -->
+    <section class="filters" id="items">
+
+      <input id="q" type="search"
+             placeholder="🔍 Search products...">
+
+      <select id="fCat">
+        <option value="">All Categories</option>
+        <option>Groceries</option>
+        <option>Dairy</option>
+        <option>Beverages</option>
+        <option>Personal care</option>
+        <option>Household</option>
+        <option>Bakery</option>
+        <option>Vegetables</option>
+        <option>Grains</option>
+      </select>
+
+      <select id="fStatus">
+        <option value="">All Statuses</option>
+        <option value="expired">Expired</option>
+        <option value="soon">Expiring Soon</option>
+        <option value="first">Use First</option>
+        <option value="ok">Fine for Now</option>
+      </select>
+
+      <select id="sort">
+        <option value="date">Sort by Expiry Date</option>
+        <option value="name">Sort by Name</option>
+      </select>
+
+    </section>
+
+    <!-- Products -->
+    <div class="items-title">
+      <h2>▧ Your Items <small id="total">(0)</small></h2>
+      <div>
+        <button id="grid" class="selected">▦ Grid</button>
+        <button id="list">☷ List</button>
+      </div>
+    </div>
+
+    <section id="products" class="product-grid"></section>
+
+    <section id="empty" class="empty">
+      <div>🌱</div>
+      <h3>Your inventory starts here</h3>
+      <p>Add a product to start tracking expiry dates.</p>
+    </section>
+
+    <footer>
+      ExpiryGuard is an organizational aid.
+      Always check product labels and follow safety guidance.
+    </footer>
+
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
